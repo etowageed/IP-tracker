@@ -7,23 +7,52 @@
     <title>IP Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="min-h-screen">
-    <div class="container mx-auto">
-        <div class="header bg-blue-700 h-64">
-            <h1 class="text-bold text-4xl font-sans">IP Address Tracker</h1>
-
+<body>
+<div class="container min-w-screen">
+    <!-- header container -->
+     <div class="w-full h-72 pt-10 md:w-full" style="background: url(img/pattern-bg.png); background-repeat: no-repeat; background-size: cover">
+        <h1 class="text-white text-4xl font-sans text-center">IP Address Trakr</h1>
+        <!-- form component -->
+        <div class="max-w-xs h-20 md:max-w-2xl bg-white rounded-lg pl-4 mx-auto mt-10 overflow-hidden">
             <form>
-                <div class="">
-                <input type="text" placeholder="Search for any IP address" class="pl-3 pr-20 py-4 rounded-lg sm:w-full">
-                <a class="block py-2 px-3 bg-black-700" href="#"><img src="img/icon-arrow.svg"></a>
-                </div>
+                <input class="py-6 focus:outline-none" id="IPaddress" type="text" placeholder="Search for any IP address or domain">
+                <button class="py-9  px-8 bg-gray-900 float-right rounded-tr-lg hover:bg-gray-600 rounded-br-lg" id="cta"><img src="img/icon-arrow.svg"></button>
             </form>
-
-            <div class="sm:w-full h-72 rounded-lg bg-white shadow-2xl mx-auto"></div>
         </div>
+        <!--  -->
 
 
+    <!--info display component  -->
+<div class="rounded-lg max-w-xs relative text-center md:text-left md:max-w-6xl mt-10 px-6 py-6 bg-white flex justify-between flex-col md:flex-row shadow-2xl mx-auto">
+    <div class="info-div max-w-xs mb-4 address">
+        <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4">IP ADDRESS</span><br>
+        <span class="info md:pl-4">Lorem ipusn dolor sit</span>
     </div>
+    <div class="info-div max-w-xs mb-4 md:border-l-2 location">
+        <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4">LOCATION</span><br>
+        <span class="info md:pl-4">Lorem ipusn dolor sit</span>
+    </div>
+    <div class="info-div max-w-xs mb-4 md:border-l-2 timezone">
+        <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4">TIMEZONE</span><br>
+        <span class="info md:pl-4">Lorem ipusn dolor sit</span>
+    </div>
+    <div class="info-div max-w-xs mb-4 md:border-l-2 ISP ">
+        <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4">ISP</span><br>
+        <span class="info md:pl-4">Lorem ipusn dolor sit</span>
+    </div>
+
+</div>
+<!-- -->
+    
+    </div>
+
+<!-- map container  -->
+ <div id="map-container" class="w-full bg-blue-600" style="height: 65vh;">
+
+ </div>
+
+
+</div>
 
     
     
