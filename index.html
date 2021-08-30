@@ -1,70 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IP Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
     <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
- integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
- crossorigin=""></script>
-</head>
-<body>
-<div class="container min-w-screen">
-    <!-- header container -->
-     <div class="w-full h-72 pt-10 md:w-full" style="background: url(img/pattern-bg.png); background-repeat: no-repeat; background-size: cover">
-        <h1 class="text-white text-4xl font-sans text-center">IP Address Trakr</h1>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <div class="container min-w-screen">
+      <!-- header container -->
+      <div
+        class="w-full h-72 pt-10 md:w-full"
+        style="
+          background: url(img/pattern-bg.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+        "
+      >
+        <h1 class="text-white text-4xl font-sans text-center">
+          IP Address Trakr
+        </h1>
         <!-- form component -->
-        <div class="max-w-xs h-20 md:max-w-2xl bg-white rounded-lg pl-4 mx-auto mt-10 overflow-hidden">
-            <form>
-                <input class="py-6 focus:outline-none" id="IPaddress" type="text" placeholder="Search for any IP address or domain">
-                <button class="py-9  px-8 bg-gray-900 float-right rounded-tr-lg hover:bg-gray-600 rounded-br-lg" id="cta"><img src="img/icon-arrow.svg"></button>
-            </form>
+        <div
+          class="
+            max-w-xs
+            h-20
+            md:max-w-2xl
+            bg-white
+            rounded-lg
+            pl-4
+            mx-auto
+            mt-10
+            overflow-hidden
+          "
+        >
+          <form>
+            <input
+              class="py-6 focus:outline-none"
+              id="IPaddress"
+              type="text"
+              placeholder="Search for any IP address or domain"
+            />
+            <button
+              class="
+                py-9
+                px-8
+                bg-gray-900
+                float-right
+                rounded-tr-lg
+                hover:bg-gray-600
+                rounded-br-lg
+              "
+              id="cta"
+            >
+              <img src="img/icon-arrow.svg" />
+            </button>
+          </form>
         </div>
         <!--  -->
-
-
-    <!--info display component  -->
-<div class="rounded-lg max-w-xs relative text-center md:text-left md:max-w-6xl mt-6 px-6 py-6 bg-white flex justify-between flex-col md:flex-row shadow-2xl mx-auto">
-    <div class="info-div max-w-xs mb-2 address">
-        <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4">IP ADDRESS</span><br>
-        <span class="info md:pl-4">Lorem ipusn dolor sit</span>
-    </div>
-    <div class="info-div max-w-xs mb-2 md:border-l-2 location">
-        <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4">LOCATION</span><br>
-        <span class="info md:pl-4">Lorem ipusn dolor sit</span>
-    </div>
-    <div class="info-div max-w-xs mb-2 md:border-l-2 timezone">
-        <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4">TIMEZONE</span><br>
-        <span class="info md:pl-4">Lorem ipusn dolor sit</span>
-    </div>
-    <div class="info-div max-w-xs mb-2 md:border-l-2 ISP ">
-        <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4">ISP</span><br>
-        <span class="info md:pl-4">Lorem ipusn dolor sit</span>
-    </div>
-
+        <!--info display component  -->
+<div
+class="
+  rounded-lg
+  max-w-xs
+  relative
+  text-center
+  md:text-left md:max-w-6xl
+  mt-6
+  px-6
+  py-6
+  bg-white
+  flex
+  justify-between
+  flex-col
+  md:flex-row
+  shadow-2xl
+  mx-auto
+  
+"
+style="z-index: 20;">
+<div class="info-div max-w-xs mb-2 address">
+  <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4"
+    >IP ADDRESS</span
+  ><br />
+  <span class="info md:pl-4">Lorem ipusn dolor sit</span>
 </div>
-<!-- -->
-    
-    </div>
-
-<!-- map container  -->
- <div id="map-container" class="w-full" style="height: 65vh;">
-
- </div>
-
-
+<div class="info-div max-w-xs mb-2 md:border-l-2 location">
+  <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4"
+    >LOCATION</span
+  ><br />
+  <span class="info md:pl-4">Lorem ipusn dolor sit</span>
+</div>
+<div class="info-div max-w-xs mb-2 md:border-l-2 timezone">
+  <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4"
+    >TIMEZONE</span
+  ><br />
+  <span class="info md:pl-4">Lorem ipusn dolor sit</span>
+</div>
+<div class="info-div max-w-xs mb-2 md:border-l-2 ISP">
+  <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4"
+    >ISP</span
+  ><br />
+  <span class="info md:pl-4">Lorem ipusn dolor sit</span>
 </div>
 
-    
-    
-    <script src="app.js">
 
-    </script>
-</body>
+        <!-- -->
+      </div>
+    </div>
+</div>
+
+    <!-- map container  -->
+    <div id="map-container" class="w-full" style="height: 65vh; z-index: 1;"></div>
+
+    <script src="app.js"></script>
+  </body>
 </html>
