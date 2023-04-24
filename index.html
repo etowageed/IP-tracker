@@ -40,11 +40,13 @@
           <form>
             <input
               class="py-6 focus:outline-none"
-              id="IPaddress"
+              id="addIP"
               type="text"
               placeholder="Search for any IP address or domain"
             />
             <button
+              type="button"
+              onclick="getIPaddress()"
               class="py-9 px-8 bg-gray-900 float-right rounded-tr-lg hover:bg-gray-600 rounded-br-lg"
               id="cta"
             >
@@ -63,25 +65,25 @@
             <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4"
               >IP ADDRESS</span
             ><br />
-            <span class="info md:pl-4">Lorem ipusn dolor sit</span>
+            <span id="iPnum" class="info md:pl-4"></span>
           </div>
           <div class="info-div max-w-xs mb-2 md:border-l-2 location">
             <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4"
               >LOCATION</span
             ><br />
-            <span class="info md:pl-4">Lorem ipusn dolor sit</span>
+            <span id="iPloc" class="info md:pl-4"></span>
           </div>
           <div class="info-div max-w-xs mb-2 md:border-l-2 timezone">
             <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4"
               >TIMEZONE</span
             ><br />
-            <span class="info md:pl-4">Lorem ipusn dolor sit</span>
+            <span id="iPtim" class="info md:pl-4"></span>
           </div>
           <div class="info-div max-w-xs mb-2 md:border-l-2 ISP">
             <span class="faintTxt text-xs font-bold text-gray-400 md:pl-4"
               >ISP</span
             ><br />
-            <span class="info md:pl-4">Lorem ipusn dolor sit</span>
+            <span id="iPisp" class="info md:pl-4"></span>
           </div>
 
           <!-- -->

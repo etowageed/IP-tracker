@@ -1,6 +1,10 @@
-const inputField = document.getElementById("IPaddress");
+let inputField = document.getElementById("addIP").value;
 const button = document.getElementById("cta");
 const mapContainer = document.getElementById("map-container");
+let iPnum = document.getElementById("iPnum");
+let iPloc = document.getElementById("iPloc");
+let iPtim = document.getElementById("iPtim");
+let iPisp = document.getElementById("iPisp");
 
 const geedMap = L.map("map-container").setView([6.465422, 3.406448], 13);
 
@@ -19,3 +23,24 @@ L.tileLayer(
 ).addTo(geedMap);
 
 const marker = L.marker([6.465422, 3.406448]).addTo(geedMap);
+
+const getIPaddress = () => {
+  fetch(
+    `https://geo.ipify.org/api/v1?apiKey=at_Dl2AhbN2E9TFBuUCQVKBAbDtqnCx3&ipAddress=+${inputField}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      iPnum.innerText = data.ip;
+      iPloc.innerText = data.location.country;
+      iPtim.innerText = data.location.timezone;
+      iPisp.innerText = data.isp;
+    })
+    .catch((error) => {
+      console.log("this error");
+    });
+
+  inputField = "";
+};
+
+getIPaddress();
